@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../screens/categories_screen.dart';
 import '../screens/home_screen.dart';
 
-class  DrawerNavigation extends StatefulWidget {
+class DrawerNavigation extends StatefulWidget {
   @override
   _DrawerNavigationState createState() => _DrawerNavigationState();
 }
@@ -16,26 +16,32 @@ class _DrawerNavigationState extends State<DrawerNavigation> {
       child: Drawer(
         child: ListView(
           children: <Widget>[
-            UserAccountsDrawerHeader(accountName: Text("The Todo"), accountEmail: Text("Category&Priority based Todo App"), currentAccountPicture: GestureDetector(
-              child: CircleAvatar(
-                backgroundColor: Colors.black54!,
-                child: Icon(Icons.filter_list, color: Colors.white),
-              ),
-            ), decoration: BoxDecoration(
-              color: Colors.red,
-            )),
+            UserAccountsDrawerHeader(
+                accountName: Text("The Todo"),
+                accountEmail: Text("Category&Priority based Todo App"),
+                currentAccountPicture: GestureDetector(
+                  child: CircleAvatar(
+                    backgroundColor: Colors.black54,
+                    child: const Icon(Icons.filter_list, color: Colors.white),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                )),
             ListTile(
               title: Text("Home"),
               leading: Icon(Icons.home),
               onTap: () {
-                Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new HomeScreen()));
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => new HomeScreen()));
               },
             ),
             ListTile(
               title: Text("Categories"),
               leading: Icon(Icons.view_list),
               onTap: () {
-                Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new CategoriesScreen()));
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => new CategoriesScreen()));
               },
             )
           ],
